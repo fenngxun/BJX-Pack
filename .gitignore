@@ -13,8 +13,10 @@ GameOriginalImagePack.mod/
 # ---- 发布产物 ----
 bjx-整合包-*/
 *.zip
-*.html
 *.apk
+# 构建过程 html 忽略，根目录发布版游戏文件保留
+*.html
+!/Degrees of Lewdity.html
 work/bjx-pack-*.mod.zip
 work/pack_html_*_backup.html
 work/dist_base_*.html
