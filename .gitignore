@@ -83,3 +83,6 @@ node_modules/
 Thumbs.db
 desktop.ini
 .DS_Store
+
+# ---- 大尺寸截图 ----
+PhotoGrid_*.png
