@@ -14,9 +14,13 @@ GameOriginalImagePack.mod/
 bjx-整合包-*/
 *.zip
 *.html
+*.apk
 work/bjx-pack-*.mod.zip
 work/pack_html_*_backup.html
 work/dist_base_*.html
+
+# ---- APK 构建（工具链 180MB + 签名私钥，绝不入库）----
+work/_apkbuild/
 
 # ---- 诊断 dump（work 下 json 默认都是产物；只有 lyra_manifest 是图包清单输入）----
 work/*.json
