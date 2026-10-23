@@ -1,0 +1,6 @@
+booted: true
+main page imgs: {"total":1,"loaded":1,"broken":0}
+mirror imgs: {"total":5,"loaded":5,"broken":0}
+mirror canvases: []
+screenshot: final-mirror.png
+passage: Mirror

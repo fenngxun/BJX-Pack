@@ -1,0 +1,76 @@
+=== [More Love Interests Mod] Widgets Attitudes
+    frag='loveInterest.secondary' idx=5751
+    ctx='r>\n\t\t\t\t<span class="black small-description"><i>If unchecked, you will accept hypnosis attempts during combat regardless of willpower.</i></span></label>\n\t\t\t\t<br>\n\t\t\t<</if>>\n\t\t</div>\n\t\t<<set _loveIntStart1 to $loveInterest.primary>>\n\t\t<<set _loveIntStart2 to $loveInterest.secondary>>\n\t\t<<set _loveIntStart3 to $loveInterest.tertiary>>\n\t\t<div id="loveInterest" class="settingsToggleItem">\n\t\t\t<div class="gold bold">Who d'
+
+=== [TimeHourglass] Dancing Lesson
+    frag='<<link [[继续|Dance Studio]]>>' idx=585
+    ctx=' rest of the lesson passes uneventfully.\n\t<br><br>\n\t<<if $dance_ticket_intro is undefined and $worn.neck.name is "timehourglass" and $NPCName[$NPCNameList.indexOf("Charlie")].love gte 20>>\n\t<<link [[Next|Dance Concert Intro]]>><<endevent>><</link>>\n\t<<else>>\n\t<<link [[继续|Dance Studio]]>><<endevent>><</link>>\n\t<</if>>\n<<else>>\n\t<<if $arousal gte $arousalmax>>\n\t\t<<orgasmLocation "danceStudioLesson">>\n\t<</if>>\n\t<<if $ex'
+
+=== [TimeHourglass] Dance Studio
+    NO FRAGMENT HIT (len=4235) head='\n<<set $outside to 0>><<set $location to "dance_studio">><<set $eventskip to 0>><<effects>>\nYou are in the dance studio.'
+
+=== [TimeHourglass] Ocean Breeze
+    frag='oceanbreezejob' idx=69
+    ctx='\n\n<<set $outside to 0>><<set $location to "cafe">><<effects>>\n\n<<if $oceanbreezejob>><<timeTrackingEndCafe>><</if>>\n\n<<if $chef_sus gt 0>>\n\tSuspicion:\n\t<div class="meter">\n\t\t<<set _percent=Math.floor(($chef_sus / 100)*100)>>\n\t\t<<print \'<div class="redbar" style="width:\' + _percent + \'%"></div>\'>>\n\t</div>\n<</if>>\n\nYou are in the Ocean Breeze Cafe.\n<<if Time.openingHours()>>\n\t<<if Weather'
+
+=== [钓鱼人生] Coast Path Farmland
+    frag='<<farmicon "meadow">>' idx=1429
+    ctx='nk [[Soar west (<<print getTimeString(_hoursPassed, _minutesPassed)>>)|Coast Path West]]>><<set $fatigueMod to _fatigueMod>><<set $flightTime to _flightTime>><<pass _flightTime>><<set $speed to "fly">><</link>><<flight_text>><<gtiredness>>\n\t<br>\n<</if>>\n\n<br>\n<<farmicon "meadow">><<link [[Enter the meadow (0:30)|Meadow]]>><<pass 30>><</link>>\n<br>'
+
+=== [钓鱼人生] Flats
+    frag='<<barbicon>>' idx=11290
+    ctx='\t\t\t<<officeicon>><span class="blue">The superintendent\'s office isn\'t open yet.</span>\n\t\t\t\t\t<br>\n\t\t\t\t<<else>>\n\t\t\t\t\t<<officeicon>><span class="blue">The superintendent\'s office is closed for the night.</span>\n\t\t\t\t\t<br>\n\t\t\t\t<</if>>\n\t\t\t<</if>>\n\t\t<</if>>\n\t\t<br>\n\t\t<<barbicon>><<link [[Leave|Barb Street]]>><</link>>\n\t\t<br>\n\t<</if>>\n<</if>>\n<<set $eventskip to 0>>'
+
+=== [cummilk] Widgets Kitchen
+    frag='tending_give' idx=13607
+    ctx='ngth; $_i++>>\n\t\t<<set _food to _food_keys[$_i]>>\n\t\t<<if !$foodstuff[_food]>>\n\t\t\t<<set $foodstuff[_food] to { amount: 0 }>>\n\t\t<</if>>\n\t\t<<set $foodstuff[_food].amount += 20>>\n\t<</for>>\n<</widget>>\n\n<<widget "make_recipe">>\n\t<<set $_amount to _args[1] or 1>>\n\t<<tending_give _args[0] `setup.foodstuff[_args[0]].recipe.servings * $_amount`>>\n\t<<for $_ingredient range setup.foodstuff[_args[0]].recipe.ingredients>>\n\t\t<<if !'
+
+=== [cummilk] Widgets Kitchen
+    frag='wearProp' idx=7057
+    ctx='/span>\n\t\t\t<hr>\n\t\t<</if>>\n\t\t<div id="requiredForRecipe">\n\t\t\t<<requiredForRecipe $lastRecipeViewed>>\n\t\t\t<<kitchenDisplayRecipeMake>>\n\t\t</div>\n\t\t<<knownFoodRecipes $lastRecipeViewed>>\n\t</div>\n<</widget>>\n\n<<widget "kitchenDisplayRecipeMake">>\n\t<<if $phase2>>\n\t\t<<wearProp $phase2>>\n\t\t<<unset $phase2>>\n\t<</if>>\n\t<<set $_setupItem to setup.foodstuff[$lastRecipeViewed]>>\n\t<<set $_group to _recipeKeys.find((obj) => obj.key i'
+
+=== [cummilk] Widgets Tending
+    frag='amount' idx=26836
+    ctx=' Object.keys($tendingvars.harvest_dict).length gte 1>>\n\t\t\t<<for _key range Object.keys($tendingvars.harvest_dict)>>\n\t\t\t\t你收获了<<number $tendingvars.harvest_dict[_key]>>个<<print _key>>。\n\t\t\t\t<br>\n\t\t\t<</for>>\n\t\t<<else>>\n\t\t\tYou harvest <<number $tendingvars.harvest_amount>> <<print $tendingvars.harvest_name>>.\n\t\t\t<br>\n\t\t<</if>>\n\t\t<<set $tendingvars.harvest_dict to {}>>\n\t\t<<set $tendingvars.harvest to false>>\n\t\t<<if $tendin'
+
+=== [cummilk] Widgets Tending
+    frag='plants' idx=8636
+    ctx='que _water_needed>><<tending _water_needed>>\n\t\t\t\t<</link>><<gtiredness>><<gtending>>\n\t\t\t<</if>>\n\t\t<</if>>\n\t\t<br>\n\n\t<</if>>\n\n\t<<if $debug is 1 and $_plotsHere.filter(plot => plot.stage > 0 && plot.stage < 5).length gte 1>>\n\t\t<br>\n\t\t<<link "DEBUG: Instagrow all plants here" $passage>><<run tendingInstaGrow(_location)>><</link>>\n\t\t<br>\n\t<</if>>\n<</widget>>\n\n<<widget "tending_harvests">>\n\t/* BJX pack: 收获单块或全部成熟作物。参数：地点，地'
+
+=== [日落伊甸园] Eden Clearing
+    frag='Time.hour' idx=539
+    ctx='en grows vegetables. Behind the cabin is a spring at the base of a cliff.\n<br><br>\n\n<<if $foresthunt gte 1>>\n\t<span class="lblue">You\'re safe at Eden\'s cabin. Whatever was hunting you will have given up.</span>\n\t<br><br>\n\t<<set $foresthunt to 0>>\n<</if>>\n<<if Time.hour gte 7>>\n\t<<edenFluidsCheck>>\n<</if>>\n\n<<if $edenCagedEscape and Time.hour gte 7>>\n\tEden looks up as you approach the cabin. <<He>> does a double take '
+
+=== [日落伊甸园] Cabin Actions
+    NO FRAGMENT HIT (len=1682) head='<<effects>><<getTarget true>><<if Time.hour is 17 and $rng gte 80 and !$daily.eden_sniff>><<set $daily.eden_sniff to 1>>'
+
+=== [WhitneyExpansion] Park
+    frag='<<set $daily.whitney.text += 1>>' idx=10725
+    ctx=' <<nnpc_He "Whitney">> stands under a tree near the park\'s fountain.\n\t\t\t\t<br>\n\t\t\t\t<<parkicon "fountain">><<link [[Approach|Whitney Park]]>><<set $daily.whitney.textTrigger to true>><<if $daily.whitney.text is undefined>><<set $daily.whitney.text to 0>><<else>><<set $daily.whitney.text += 1>><</if>><</link>>\n\t\t\t\t<br><br>\n\t\t\t<</if>>\n\t\t\t<<if isInPark("sam") and $Sam_Park_Intro is 1>>\n\t\t\t\tYou see Sam standing beside the '
+
+=== [WhitneyExpansion] Widgets Whitney
+    frag='<<set $daily.whitney.flirt to 1>>' idx=13385
+    ctx='y Milkshake Fail]]>><<pass 20>><<npcincr Whitney love 1>><<set $milkshake -= 1>><</link>><<glove>>\n\t\t\t\t\t<br>\n\t\t\t\t<</if>>\n\t\t\t<</if>>\n\t\t\t\t<<if $whitneyromance is 1 and $daily.whitney.flirt is undefined>>\n\t\t\t\t<<brothelicon>><<link [[Flirt (0:15)|Whitney Flirt]]>><<set $daily.whitney.flirt to 1>><<pass 15>><<npcincr Whitney love 1>><<npcincr Whitney lust 1>><</link>><<promiscuous1>><<glove>><<glust>>\n\t\t\t\t<br>\n\t\t\t<</if>>\n'
+
+=== [WhitneyExpansion] Whitney Chat
+    frag='<<whitneyoptions>>' idx=4998
+    ctx='k you in the fountain," <<he>> says <<print playerBellyVisible() ? "as <<he>> chews <<his>> gum" : "in between drags">>. "Sure would like to see your clothes go see-through."\n\t\t<<else>>\n\t\t\t<<He>> stays silent, but seems to be listening.\n\t\t<</if>>\n\t\t<br><br>\n\t\t<<whitneyoptions>>\n\t<<else>>\n\t\t<<if $rng gte 66>>\n\t\t\t<<athleticsdifficulty 650 1000 true>>\n\t\t\tBefore you can react, Whitney grabs you. <<He>> starts running tow'
+
+=== [WhitneyExpansion] Whitney Chat
+    frag='<<else>>' idx=832
+    ctx='y," Whitney says, nudging you and pointing at the pair. "Know what that is?"\n\t\t<br><br>\n\t\t<<if $speech_attitude is "meek">>\n\t\t\t"Uh..." You grin sheepishly. "A happy couple?"\n\t\t<<elseif $speech_attitude is "bratty">>\n\t\t\t"A couple perverted loons," you snort.\n\t\t<<else>>\n\t\t\t"A couple on a walk?" you ask.\n\t\t<</if>>\n\t\t<br><br>\n\t\tWhitney smirks. <span class="pink">"Profit."</span> Before you know it, your arm is in <<perso'
+
+=== [Wraith'sReflection] Start
+    NO FRAGMENT HIT (len=2287) head='<<if $intro is undefined>>\n\t<<gameStartOnly>>\n\t<<if !localStorage.getItem("verifiedAge")>>\n\t\t<<set _linksenabled to Link'
+
+=== [Wraith'sReflection] Town Hall
+    NO FRAGMENT HIT (len=676) head='<<set $outside to 0>><<effects>><<location "townhall">>\n\nYou approach the town hall, a tall building on the precipice. I'
+
+=== [Wraith'sReflection] Lake Ruin Plinth
+    frag='museumAntiques.antiques.antiqueivorynecklace' idx=164
+    ctx='\n\n<<set $outside to 0>><<set $location to "lake_ruin">><<underwater>><<effects>><<lakeeffects>>\nYou are deep in the lake ruin, in a small room with a plinth.\n<<if $museumAntiques.antiques.antiqueivorynecklace is "notFound">>\n\tAn ivory necklace sits atop it. It\'s studded with blue jewels.\n<</if>>\n<<set _leave to 1>>\n<<set _bmoon to Time.isBloodMoon()>>\n<<set _parasite to !!numberOfEarSlime(true)>>\n<<if _bmoon>>\n\t/* Di'
+
+=== [Wraith'sReflection] Lake Ruin Plinth
+    frag='museumAntiques.antiques.antiqueivorynecklace' idx=164
+    ctx='\n\n<<set $outside to 0>><<set $location to "lake_ruin">><<underwater>><<effects>><<lakeeffects>>\nYou are deep in the lake ruin, in a small room with a plinth.\n<<if $museumAntiques.antiques.antiqueivorynecklace is "notFound">>\n\tAn ivory necklace sits atop it. It\'s studded with blue jewels.\n<</if>>\n<<set _leave to 1>>\n<<set _bmoon to Time.isBloodMoon()>>\n<<set _parasite to !!numberOfEarSlime(true)>>\n<<if _bmoon>>\n\t/* Di'
+

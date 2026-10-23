@@ -1,0 +1,142 @@
+:: Widgets Museum [widget]
+<<widget "museumdonate">>
+	<<museumAntiqueStatus "antiquebox" "talk">>
+	<<museumAntiqueStatus "antiquesilverring" "talk">>
+	<<museumAntiqueStatus "antiquegoldnecklace" "talk">>
+	<<museumAntiqueStatus "antiqueivorynecklace" "talk">>
+	<<museumAntiqueStatus "antiquecrystal" "talk">>
+	<<museumAntiqueStatus "antiquehorn" "talk">>
+	<<museumAntiqueStatus "antiquewatch" "talk">>
+	<<museumAntiqueStatus "antiquedildo" "talk">>
+	<<museumAntiqueStatus "antiquecandlestick" "talk">>
+	<<museumAntiqueStatus "antiqueforestarrow" "talk">>
+	<<museumAntiqueStatus "antiqueforestdagger" "talk">>
+	<<museumAntiqueStatus "antiqueforestgem" "talk">>
+	<<museumAntiqueStatus "antiquesilverbrooch" "talk">>
+	<<museumAntiqueStatus "antiquetrashcup" "talk">>
+	<<museumAntiqueStatus "antiquetrashburner" "talk">>
+	<<museumAntiqueStatus "antiquebrassstatuette" "talk">>
+	<<museumAntiqueStatus "antiquegoldchastitybelt" "talk">>
+	<<museumAntiqueStatus "antiquecoppercompass" "talk">>
+	<<museumAntiqueStatus "antiquegrenade" "talk">>
+	<<museumAntiqueStatus "antiquestonetalisman" "talk">>
+	<<museumAntiqueStatus "antiquesilvermask" "talk">>
+	<<museumAntiqueStatus "antiquediamond" "talk">>
+	<<museumAntiqueStatus "antiquesilvercompass" "talk">>
+	<<museumAntiqueStatus "antiquesilverdagger" "talk">>
+	<<museumAntiqueStatus "antiquerustedcutlass" "talk">>
+	<<museumAntiqueStatus "antiquecutlass" "talk">>
+	<<museumAntiqueStatus "antiqueleathermap" "talk">>
+	<<museumAntiqueStatus "antiquebell" "talk">>
+	<<museumAntiqueStatus "antiquebullet" "talk">>
+	<<museumAntiqueStatus "antiqueshell" "talk">>
+	<<museumAntiqueStatus "antiquegoldring" "talk">>
+	<<museumAntiqueStatus "antiquegoldbrooch" "talk">>
+	<<museumAntiqueStatus "antiquecoralring" "talk">>
+	<<museumAntiqueStatus "antiquehourglass" "talk">>
+	<<museumAntiqueStatus "antiquecoppercoin" "talk">>
+	<<museumAntiqueStatus "antiquesilvercoin" "talk">>
+	<<museumAntiqueStatus "antiquegoldcoin" "talk">>
+	<<museumAntiqueStatus "antiquesilverblade" "talk">>
+	<<museumAntiqueStatus "antiqueivorystatuette" "talk">>
+	<<museumAntiqueStatus "antiquestrangefetish" "talk">>
+	<<museumAntiqueStatus "antiquesilvergoblet" "talk">>
+	<<museumAntiqueStatus "antiquesilvercrown" "talk">>
+	<<museumAntiqueStatus "antiquewhitecrystal" "talk">>
+	<<museumAntiqueStatus "antiqueminesign" "talk">>
+	<<museumAntiqueStatus "antiqueobsidiandisc" "talk">>
+	<<museumAntiqueStatus "antiquewoodenmask" "talk">>
+	<<museumAntiqueStatus "antiquetrilobitefossil" "talk">>
+	<<museumAntiqueStatus "antiqueislandarrow" "talk">>
+	<<museumAntiqueStatus "antiquegoldcompass" "talk">>
+	<<museumAntiqueStatus "antiqueswordcane" "talk">>
+	<<museumAntiqueStatus "antiquechocolate" "talk">>
+	<<museumAntiqueStatus "antiqueteacaddy" "talk">>
+	<<museumAntiqueStatus "antiquewoodenfigurine" "talk">>
+	<<museumAntiqueStatus "antiquecopperring" "talk">>
+	<<museumAntiqueStatus "antiquesilveramulet" "talk">>
+	<<museumAntiqueStatus "antiquebucket" "talk">>
+	<<museumAntiqueStatus "antiquesilvermanacle" "talk">>
+	<<museumAntiqueStatus "antiquesnuffer" "talk">>
+	<<museumAntiqueStatus "antiquewhip" "talk">>
+	<<museumAntiqueStatus "antiquehorn2" "talk">>
+	<<museumAntiqueStatus "antiquegolddagger" "talk">>
+	<<museumAntiqueStatus "antiquegoldamulet" "talk">>
+	<<museumAntiqueStatus "antiquegoldmask" "talk">>
+/* BJX ant island mod */
+	<<museumAntiqueStatus "antiquecannonball" "talk">>
+	<<museumAntiqueStatus "antiquearttablet" "talk">>
+	<<museumAntiqueStatus "antiqueterracottastatue" "talk">>
+	<<museumAntiqueStatus "antiqueredvial" "talk">>
+	<<museumAntiqueStatus "antiquetribemask" "talk">>
+	<<museumAntiqueStatus "antiqueebonystatuette" "talk">>
+	<<museumAntiqueStatus "antiqueglacierplant" "talk">>
+	<<museumAntiqueStatus "antiquebullion" "talk">>
+	<<museumAntiqueStatus "antiquereal" "talk">>
+	<<museumAntiqueStatus "antiqueindigo" "talk">>
+	<<museumAntiqueStatus "antiquegreed" "talk">>
+/* BJX ant island end */
+<</widget>>
+
+<<widget "museumtalk">>
+	<<museumAntiqueText>><<museumPaintingText>>
+	/* Prevent having to "sell" a worn chastity belt for £0 */
+	<<if $museumAntiques.antiques.antiquegoldchastitybelt is "found" and $worn.genitals.origin is "Underwater Temple" and $gold_chastity_held isnot true>>
+		<<museumAntiqueStatus "antiquegoldchastitybelt" "talk">>
+	<</if>>
+	<<for _labelM, _valueM range $museumAntiques.antiques>>
+		<<capture _labelM, _museumAntiqueText[_labelM].name>>
+			<<set _antique to _museumAntiqueText[_labelM].name.toLowerCase()>>
+			<<if $museumAntiques.antiques[_labelM] is "talk">>
+				<<icon _museumAntiqueText[_labelM].icon>>
+				<<link [[`Ask about the _antique`|`Museum `+ _museumAntiqueText[_labelM].name]]>><<set $museumAntiques.antiques[_labelM] to "museum">><<set $museumAntiques.museumCount++>><<npcincr Winter love 1>><</link>><<glove "Winter" "simple">>
+				<br>
+			<</if>>
+		<</capture>>
+	<</for>>
+	<<if !$daily.winterStoryTime>>
+		<<if $bleedingWardCheckpoint and $museumAntiques.paintings.paintingward is "museum">>
+			<<icon _museumPaintingText.paintingward.icon>><<link [[Ask Winter to tell you the 'Bleeding Ward' story from where you left off (0:15)|Bleeding Ward Resume]]>><<set $daily.winterStoryTime to true>><</link>>
+			<br>
+		<</if>>
+		<<for _labelP, _valueP range $museumAntiques.paintings>>
+			<<capture _labelP, _museumPaintingText[_labelP].name>>
+				<<if $museumAntiques.paintings[_labelP] is "talk">>
+					<<set _painting to _museumPaintingText[_labelP].journalName.toLowerCase()>>
+					<<icon _museumPaintingText[_labelP].icon>>
+					<<link [[`Ask about the _painting (0:30)`|`Museum `+ _museumPaintingText[_labelP].name + ` Story`]]>><<set $daily.winterStoryTime to true>><<npcincr Winter love 3>><</link>><<gglove "Winter" "simple">>
+					<<if _labelP is "paintingsnake">><<note "This may be a long story..." "red">> | <span class="red tooltip-anchor" tooltip="<span class='red'>This scene contains disturbing content not found elsewhere, including bodily mutilation. It is not prevented by any toggles or settings. You have been warned.</span>"><i>(!Content Warning!)</i></span><</if>> <!-- Appears even with blind stats enabled. Intentional -->
+					<br>
+				<<elseif $museumAntiques.paintings[_labelP] is "museum">>
+					<<set _painting to "'" + _museumPaintingText[_labelP].name + "'">>
+					<<icon _museumPaintingText[_labelP].icon>>
+					<<link [[`Ask Winter to tell you the _painting story again (0:30)`|`Museum `+ _museumPaintingText[_labelP].name + ` Story`]]>><<set $daily.winterStoryTime to true>><</link>>
+					<<if _labelP is "paintingsnake">><<note "This may be a long story..." "red">> | <span class="red tooltip-anchor" tooltip="<span class='red'>This scene contains disturbing content not found elsewhere, including bodily mutilation. It is not prevented by any toggles or settings. You have been warned.</span>"><i>(!Content Warning!)</i></span><</if>> <!-- Appears even with blind stats enabled. Intentional -->
+					<br>
+				<</if>>
+			<</capture>>
+		<</for>>
+	<</if>>
+	/* BJX ant island mod */
+	<<if $options.bjx_antiques>>
+		<<museumtake>>
+		<<museumreturn>>
+	<</if>>
+	/* BJX ant island end */
+<</widget>>
+
+/* BJX ant island mod */
+<<widget "museumtake">>
+	<<if $money gte 500000 and $museumAntiques.antiques.antiquegreed is "museum">>
+		<<link [[带走贪婪之杯 (£5000)|Museum Take]]>><<set $money -= 500000>><<museumAntiqueStatus "antiquegreed" "take">><<npcincr Winter love -1>><</link>><<llove>>
+		<br>
+	<</if>>
+<</widget>>
+
+<<widget "museumreturn">>
+	<<if $museumAntiques.antiques.antiquegreed is "take">>
+		<<link [[归还贪婪之杯 (£5000)|Museum Return]]>><<set $money += 500000>><<museumAntiqueStatus "antiquegreed" "museum">><<npcincr Winter love 1>><</link>><<glove>>
+		<br>
+	<</if>>
+<</widget>>
+/* BJX ant island end */

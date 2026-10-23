@@ -1,0 +1,105 @@
+/* BJX ant island mod: museum dialogue passages.
+   Passage names follow the 0.5.10.12 data-driven museumtalk rule:
+   "Museum " + _museumAntiqueText[key].name  */
+:: Museum Take
+<<set $outside to 0>><<set $location to "museum">><<effects>>
+<<npc Winter>><<person1>>"你要带走它？"温特皱眉思索了一阵。"好吧，毕竟是你找到的东西。但要记住，这是珍贵的古董，请好好地保护它。"温特嘱咐道。"另外，我要收取押金，这是必要的手续，别担心，待你归还时会退给你的。"
+<br><br>
+
+<<link [[继续|Museum]]>><<endevent>><</link>>
+
+:: Museum Return
+<<set $outside to 0>><<set $location to "museum">><<effects>>
+<<npc Winter>><<person1>>"谢天谢地，你把它带回来了。"温特小心接过古董，仔细观察着。"没有任何新的损伤，看来你有好好爱护它。"温特笑了起来。"好了，接下来就交给我吧，我会把它收好的，这是你的押金。"
+<br><br>
+
+<<link [[继续|Museum]]>><<endevent>><</link>>
+
+:: Museum 大炮弹
+<<set $outside to 0>><<set $location to "museum">><<effects>>
+<<npc Winter>><<person1>><<museumClearHint "antiquecannonball">>
+"这看起来像个旧炮弹。"温特说，"可能在上个世纪的一次海战中使用过。"
+<br><br>
+
+<<link [[继续|Museum]]>><<endevent>><</link>>
+
+:: Museum 艺术碑
+<<set $outside to 0>><<set $location to "museum">><<effects>>
+<<npc Winter>><<person1>><<museumClearHint "antiquearttablet">>
+"这看起来像一幅旧的手绘画。"温特说，"是被画在这块旧石碑上的。"
+<br><br>
+
+<<link [[继续|Museum]]>><<endevent>><</link>>
+
+:: Museum 陶俑
+<<set $outside to 0>><<set $location to "museum">><<effects>>
+<<npc Winter>><<person1>><<museumClearHint "antiqueterracottastatue">>
+"这似乎是某种陶俑。"温特说，"它看起来像是用在当地人的什么宴会仪式上的。"
+<br><br>
+
+<<link [[继续|Museum]]>><<endevent>><</link>>
+
+:: Museum 红色小瓶
+<<set $outside to 0>><<set $location to "museum">><<effects>>
+<<npc Winter>><<person1>><<museumClearHint "antiqueredvial">>
+"这是什么？"温特望着玻璃瓶里的不名液体，"我可以接手它，但不要再捡这样奇怪的东西了，连我都不知道这里面有什么。"
+<br><br>
+
+<<link [[继续|Museum]]>><<endevent>><</link>>
+
+:: Museum 部落面具
+<<set $outside to 0>><<set $location to "museum">><<effects>>
+<<npc Winter>><<person1>><<museumClearHint "antiquetribemask">>
+"看起来像一个古老的部落仪式面具。"温特说，"上面的颜料是用来描绘信息的，似乎传达了哀悼的含义。"
+<br><br>
+
+<<link [[继续|Museum]]>><<endevent>><</link>>
+
+:: Museum 乌木雕像
+<<set $outside to 0>><<set $location to "museum">><<effects>>
+<<npc Winter>><<person1>><<museumClearHint "antiqueebonystatuette">>
+"啊，一尊古老的乌木雕像。"温特说，"看起来质量也很好。"
+<br><br>
+
+<<link [[继续|Museum]]>><<endevent>><</link>>
+
+:: Museum 古代植物
+<<set $outside to 0>><<set $location to "museum">><<effects>>
+<<npc Winter>><<person1>><<museumClearHint "antiqueglacierplant">>
+"嗯，这些种子是什么？"温特问道。<<He>>在回来之前花了几分钟检查种子。"它看起来和现代物种相似，但也有一些明显的区别。"
+<br><br>
+
+<<link [[继续|Museum]]>><<endevent>><</link>>
+
+:: Museum 古旧金条
+<<set $outside to 0>><<set $location to "museum">><<effects>>
+<<npc Winter>><<person1>><<museumClearHint "antiquebullion">>
+"这个硬邦邦的老旧条块是什么？"温特问道，<<He>>拿起一块纱布，摩擦起条块的外壳，不一会里面露出了闪亮的光芒。"看起来像是一块金条，如果它没有贬值太多的话，应该能卖出一个不错的价格。"
+<br><br>
+
+<<link [[继续|Museum]]>><<endevent>><</link>>
+
+:: Museum 原始硬币
+<<set $outside to 0>><<set $location to "museum">><<effects>>
+<<npc Winter>><<person1>><<museumClearHint "antiquereal">>
+"嗯，这些是什么硬币？"温特问道，<<He>>花了几分钟检查硬币。"应该是读作：'卡罗尔和约翰·雷吉斯'，这似乎可以追溯到15世纪早期国王查理一世统治时期。"
+<br><br>
+
+<<link [[继续|Museum]]>><<endevent>><</link>>
+
+:: Museum 靛蓝染料
+<<set $outside to 0>><<set $location to "museum">><<effects>>
+<<npc Winter>><<person1>><<museumClearHint "antiqueindigo">>
+"粉末？"温特疑惑道，<<He>>从柜台下面取出一副眼镜，仔细检查瓶子。"看起来是一瓶密封的靛蓝染料，即使在今天，天然靛蓝也很罕见，所以这似乎是一个相当大的发现。"
+<br><br>
+
+<<link [[继续|Museum]]>><<endevent>><</link>>
+
+:: Museum 贪婪之杯
+<<set $outside to 0>><<set $location to "museum">><<effects>>
+<<npc Winter>><<person1>><<museumClearHint "antiquegreed">>
+"这就是传说中的贪婪之杯？"温特盯着眼前的黄金杯子，呼吸逐渐粗重，眼睛变得赤红。试着用手抚摸。"快，快把它给我，它应该属于我。"直到你用布蒙住，温特才恢复正常。
+<br><br>
+
+<<link [[继续|Museum]]>><<endevent>><</link>>
+

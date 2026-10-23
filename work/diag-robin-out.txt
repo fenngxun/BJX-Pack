@@ -1,0 +1,36 @@
+booted: true
+passage after gate: Start
+after school start: Start2
+farm: undefined/undefined
+statusCheck: {"trauma":0,"cdquest":["(revive:eval)","undefined"],"crossdressing":["(revive:eval)","undefined"]}
+passage: Robin Play
+passage count / total len: 1/10296
+links: ["(1) Go somewhere together","(2) 依偎 (0:20)","(3) 打个盹 (0:45)","(4) Ask for money","(5) Main hall (0:01)","Export","Help me export","Ignore for now"]
+page head: 
+	
+
+
+
+
+
+	         
+	
+		
+			
+		
+		
+	
+
+
+
+
+                                              
+
+
+
+	You play a cooperative game with [ERROR: undefined pronoun in "him"].
+	  | - Stress 
+	
+	                                                                                                                         
+passage ids: passage-robin-play
+robinoptions def source head: no-getWidgets

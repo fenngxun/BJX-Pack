@@ -1,0 +1,25 @@
+booted: true
+P1 passage: Start
+[bjx] zip bytes: 1021358 chunks: 4
+[bjx] addModIndexDB: ok, idb: ["bjx-pack"]
+[imgpack] zip bytes: 11793987 chunks: 40
+[imgpack] addModIndexDB: ok, idb: ["bjx-pack","GameOriginalImagePack"]
+enable list: written
+P2 rebooted: true
+P2 loaded mods: ["ModLoaderGui","ConflictChecker","ModLoader DoL ImageLoaderHook","ImageLoaderHook","ImageLoaderHookCore","ModSubUiAngularJs","BeautySelectorAddon","ImageLoaderHook2BeautySelectorAddon","CheckGameVersion","CheckDoLCompressorDictionaries","TweeReplacerLinker","TweeReplacer","I18nTweeReplacer","I18nTweeList","I18nScriptList","ReplacePatcher","TweePrefixPostfixAddon","Diff3WayMerge","DoLTimeWrapperAddon","ModdedClothesAddon","ModdedHairAddon","ModdedFeatsAddon","SweetAlert2Mod","ModuleCssReplacer","DoLLinkButtonFilter","bjx-pack","GameOriginalImagePack"]
+P2 bjx loaded: true
+P2 imgpack loaded: true
+P2 imgpack imgs in cache: no-cache
+P2 Sea Reef: true
+P2 Robin Raccoon: true
+P2 passage: Start
+P2 after school start: Start2
+P2 tf keys: true/true/true
+P3 img elements: {"total":3,"loaded":0,"broken":3,"srcSample":["http://127.0.0.1:8766/img/ui/pepper-spray.png","http://127.0.0.1:8766/img/ui/sidebar-closed.png","http://127.0.0.1:8766/img/ui/sidebar-day.png"]}
+P3 at mirror: Bedroom
+P3 mirror canvases: [{"w":64,"h":192,"dataLen":9730},{"w":256,"h":256,"dataLen":23014},{"w":256,"h":256,"dataLen":3174}]
+P3 mirror imgs: {"total":15,"loaded":0,"broken":15}
+P3 screenshot saved: patha-mirror.png
+P3 forest imgs: total:14 loaded:0
+P3 forest canvases: [{"w":64,"h":192,"dataLen":9518},{"w":256,"h":256,"dataLen":23014},{"w":256,"h":256,"dataLen":3174}]
+P3 screenshot saved: patha-forest.png

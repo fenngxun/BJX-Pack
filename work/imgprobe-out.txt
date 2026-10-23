@@ -1,0 +1,9 @@
+booted: true
+has modSC2DataManager: true
+modUtils keys: 
+requestImageBySrc(img/ui/pepper-spray.png): null
+requestImageBySrc(img/body/base-head.png): null
+img dom: [{"src":"img/ui/coin-gold.gif","mlSrc":"img/ui/coin-gold.gif","outer":"<img class=\"imgButton\" ml-src=\"img/ui/coin-gold.gif\" ml-replaced-src=\"img/ui/coin-gold.gif\" src=\"img/ui/coin-gold.gif\">"}]
+img-related globals: modImgLoaderHooker,modImageLoaderHook2BeautySelectorAddon
+setup img keys: LocationImages,tanImg,shadowImage
+canvases: [{"w":864,"h":256,"dataLen":118886}]

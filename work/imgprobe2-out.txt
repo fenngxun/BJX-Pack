@@ -1,0 +1,8 @@
+booted: true
+modImgLoaderHooker keys: P:constructor | P:setupHook | P:init | P:installHook | O:thisWindow | O:gSC2DataManager | O:gModUtils | O:dynamicImageTagReplaceTable | O:sideHooker | O:imgLookupTable | O:logger | O:cssReplacer | O:nodeMutationObserver | O:hooked | O:waitInitCounter | O:waitKDLoadingFinished
+typeof: typeof window.modImgLoaderHooker.loadImg = undefined
+typeof: ypeof window.modImgLoaderHooker.getImage = function
+typeof:  typeof window.modImgLoaderHooker.getImg = undefined
+loadImg(img/body/base-head.png): no loadImg
+hooker fields: {"thisWindow":"[object Window]","gSC2DataManager":"[object Object]","gModUtils":"[object Object]","dynamicImageTagReplaceTable":"Set(5)","sideHooker":"Array(1)","imgLookupTable":"Map(0)","logger":"[object Object]","cssReplacer":"[object Object]","nodeMutationObserver":"[object Object]","hooked":"false","waitInitCounter":"0"}
+hooker maps: {"imgLookupTable":{"size":0,"sample":[]}}

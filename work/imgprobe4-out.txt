@@ -1,0 +1,6 @@
+booted: true
+zip reader keys: P:constructor | P:zip | P:isModPack | P:isJsZip | P:getModInfo | P:getZipFile | P:gcReleaseZip | P:gcCheckReleased | P:gcIsReleased | P:init | P:refillCacheStyleFileItems | P:refillCachePassageDataItems | P:refillCacheScriptFileItems | P:constructModInfoCache | O:loaderBase | O:modLoadControllerCallback | O:log | O:gcFinalizationRegistry | O:_zipIsExist | O:_zip | O:modZipReaderHash | O:modInfo
+zip read img/body/base-head.png: no read fn
+modInfo: {"keys":"name,nickName,alias,version,cache,imgs,imgFileReplaceList,scriptFileList_preload,scriptFileList_earlyload,scriptFileList_inject_early,replacePatcher,bootJson,modRef","imgsLen":"none","bootImgListLen":18120}
+setup keys w/ sprite/canvas: LocationImages,shadowImage
+canvas parents: [{"cls":"","parentCls":"","id":"","w":864,"h":256}]

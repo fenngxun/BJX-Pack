@@ -1,0 +1,78 @@
+// 最终验证：terraTimeEventSF 已被调用（Terraria 时间事件注册成功）+ iModReplace 可用
+import { spawn } from 'node:child_process';
+import { mkdtempSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import { join } from 'node:path';
+
+const CHROME = 'C:/Program Files/Google/Chrome/Application/chrome.exe';
+const URL = process.argv[2] || 'http://127.0.0.1:8767/Degrees%20of%20Lewdity.html';
+const PORT = 9254;
+const PROFILE = mkdtempSync(join(tmpdir(), 'b6final-'));
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+
+const main = async () => {
+  const chrome = spawn(CHROME, ['--headless=new', '--disable-gpu', `--remote-debugging-port=${PORT}`,
+    `--user-data-dir=${PROFILE}`, '--no-first-run', '--window-size=1280,900', URL], { stdio: 'ignore' });
+  let wsUrl = null;
+  for (let i = 0; i < 120 && !wsUrl; i++) {
+    try {
+      const r = await fetch(`http://127.0.0.1:${PORT}/json`);
+      const l = await r.json();
+      const p = l.find((t) => t.type === 'page' && t.url.includes('Degrees'));
+      if (p) wsUrl = p.webSocketDebuggerUrl;
+    } catch {}
+    if (!wsUrl) await sleep(500);
+  }
+  if (!wsUrl) { console.error('NO PAGE'); chrome.kill(); process.exit(2); }
+  const ws = new WebSocket(wsUrl);
+  await new Promise((r) => ws.addEventListener('open', r));
+  let id = 0; const pend = new Map();
+  const warns = [];
+  ws.addEventListener('message', (e) => {
+    const m = JSON.parse(e.data);
+    if (m.id && pend.has(m.id)) { pend.get(m.id)(m); pend.delete(m.id); }
+    if (m.method === 'Runtime.consoleAPICalled' && m.params.type === 'warning') {
+      warns.push((m.params.args || []).map((a) => a.value || a.description || '').join(' ').slice(0, 180));
+    }
+  });
+  const send = (method, params = {}) => new Promise((res, rej) => { const mid = ++id; pend.set(mid, (x) => (x.error ? rej(new Error(JSON.stringify(x.error))) : res(x.result))); ws.send(JSON.stringify({ id: mid, method, params })); });
+  await send('Runtime.enable');
+  const ev = async (e, tmo = 30000) => {
+    const r = await Promise.race([send('Runtime.evaluate', { expression: e, returnByValue: true }), sleep(tmo).then(() => null)]);
+    if (!r) return 'TIMEOUT';
+    if (r.exceptionDetails) return 'EXC:' + (r.exceptionDetails.exception?.description || r.exceptionDetails.text || '').split('\n')[0].slice(0, 300);
+    return r.result.value;
+  };
+
+  const STATE = `(function(){try{var s=window.SugarCube,st=s&&s.State;return JSON.stringify({sc:!!s,psg:st&&st.passage?String(st.passage):null,base:typeof(window.setup&&window.setup.baseNNPC)});}catch(e){return 'ERR';}})()`;
+  const t0 = Date.now();
+  while (Date.now() - t0 < 280000) {
+    const r = await ev(STATE, 15000);
+    if (typeof r === 'string' && r.startsWith('{')) {
+      const o = JSON.parse(r);
+      if (o.sc && o.psg && o.base === 'object') { console.log('READY', ((Date.now() - t0) / 1000).toFixed(1) + 's'); break; }
+    }
+    await sleep(2000);
+  }
+  await sleep(8000);
+
+  const r = await ev(`(function(){
+    try {
+      var sf = window.simpleFrameworks;
+      return JSON.stringify({
+        terraTimeEventSF: typeof window.terraTimeEventSF,
+        TimeEvent: typeof window.TimeEvent,
+        iModReplace: (window.SugarCube.Macro.get('iModReplace') ? 'registered' : 'missing'),
+        sf_onInit: sf ? typeof sf.onInit : 'absent',
+        modList: (window.iMod && window.iMod.modData && window.iMod.modData.modList) || null,
+      });
+    } catch (e) { return 'EXC:' + e.message; }
+  })()`);
+  console.log(r);
+  const onInitWarns = warns.filter((w) => /onInit/i.test(w));
+  console.log('onInit-related warnings:', onInitWarns.length);
+  onInitWarns.slice(0, 5).forEach((w) => console.log('  ' + w));
+  chrome.kill();
+  process.exit(0);
+};
+main().catch((e) => { console.error('FATAL', e); process.exit(2); });

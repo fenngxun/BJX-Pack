@@ -1,0 +1,9 @@
+booted: true
+[addModIndexDB] function addModIndexDB(name, modBase64String) { return _ModZipReader__WEBPACK_IMPORTED_MODULE_0__.IndexDBLoader.addMod(name, modBase64String); }
+[overwriteModIndexDBModList] function overwriteModIndexDBModList(_x13) { return _overwriteModIndexDBModList.apply(this, arguments); }
+[listModIndexDB] function listModIndexDB() { return _listModIndexDB.apply(this, arguments); }
+[dom] elements containing ModLoader text: DIV||11:43:58.489 PatchModToGame_start  ##  DIV||11:43:59.452 PatchModToGame_  end  ##  DIV||11:44:02.276 [[logInfo]] [ModdedClothesA  ##  DIV||11:44:02.279 [[logInfo]] [ModdedHairAddo  ##  DIV||Mod管理器2.101.1
+[dom] fixed/absolute buttons: BUTTON|ui-bar-toggle|||absolute  ##  DIV||error-reporter-btn||absolute  ##  DIV|gameVersionDisplay||0.5.10.12
+-(ML-v2.10|fixed  ##  DIV|gameVersionDisplay2||.5.10.12|fixed  ##  DIV|startBannerModLoaderGui||Mod管理器2.101.1|fixed
+[idb] databases: {}
+[idb] listModIndexDB result: {}

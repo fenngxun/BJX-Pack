@@ -1,0 +1,35 @@
+{
+  "name": "bjx-ant-island",
+  "version": "0.1.0",
+  "scriptFileList_earlyload": [],
+  "scriptFileList_inject_early": [
+    "scriptFileList_inject_early/inject_early.js"
+  ],
+  "scriptFileList_preload": [],
+  "scriptFileList": [],
+  "additionFile": [],
+  "styleFileList": [],
+  "tweeFileList": [
+    "tweeFileList/bjx-island-main.twee",
+    "tweeFileList/bjx-island-events.twee",
+    "tweeFileList/bjx-island-widgets.twee",
+    "tweeFileList/bjx-island-anthill.twee",
+    "tweeFileList/bjx-sea-reef.twee",
+    "tweeFileList/bjx-sea-swarm.twee",
+    "tweeFileList/bjx-docks-ride.twee",
+    "tweeFileList/bjx-beast-generation.twee",
+    "tweeFileList/bjx-museum-antiques.twee",
+    "tweeFileList/bjx-museum-widgets.twee",
+    "tweeFileList/bjx-museum-talk.twee"
+  ],
+  "imgFileList": [],
+  "replacePatchList": [],
+  "additionBinaryFile": [],
+  "addonPlugin": [],
+  "dependenceInfo": [
+    {
+      "modName": "ModLoader",
+      "version": ">=1.1.0"
+    }
+  ]
+}

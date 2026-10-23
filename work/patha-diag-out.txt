@@ -1,0 +1,8 @@
+booted: true
+idb list: ["bjx-pack","GameOriginalImagePack"]
+idb hidden list: []
+toLoadModList: undefined
+loadEndModList: undefined
+=== loader logger ===
+{}
+loadRecord keys: {"0":"[object Object]","1":"[object Object]","2":"[object Object]","3":"[object Object]","4":"[object Object]","5":"[object Object]","6":"[object Object]","7":"[object Object]","8":"[object Object]","9":"[object Object]","10":"[object Object]","11":"[object Object]","12":"[object Object]","13":"[object Object]","14":"[object Object]","15":"[object Object]","16":"[object Object]","17":"[object Object]","18":"[object Object]","19":"[object Object]","20":"[object Object]","21":"[object Object]","22":"[object Object]","23":"[object Object]"}

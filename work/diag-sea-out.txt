@@ -1,0 +1,155 @@
+booted: true
+passage after gate: Start
+after school start: Start2
+time now: d:Sunday h:7:0 state:dawn
+[A] passage: Sea
+[A] dive links count: 7 total; 2 dive
+[A] dive link details: 0|cls:link-internal macro-link|tgt:Sea Dive|parent: ;; 1|cls:link-internal macro-link|tgt:Sea Dive|parent:passage
+[A] phase before click: 0
+[A] click: true
+[A] after click passage: Sea Dive
+[A] phase after click: 0
+[A] danger/eventskip: danger:5653 allure:1863 skip:0 stress:0/10000
+[A] page text head: 
+	
+
+
+
+
+
+	         
+	
+		
+			
+		
+		
+	
+
+
+
+
+
+
+                                                                                                      Air:                       You can't hold your breath forever. You will pa  le  time and u e le  air per action with a higher  wimming  kill.               
+[A] page text FULL: 
+	
+
+
+
+
+
+	         
+	
+		
+			
+		
+		
+	
+
+
+
+
+
+
+                                                                                                      Air:                       You can't hold your breath forever. You will pa  le  time and u e le  air per action with a higher  wimming  kill.                                
+
+	
+	
+		
+			你潜入水下，光线穿过开阔的水面上，照亮了附近的景象。
+		
+		
+
+		
+			(1) 浮上水面
+			
+		
+		
+		
+		
+			(2) 向下潜水  | - Air   | + Fatigue 
+			
+		
+		
+	
+
+
+
+	
+	
+	
+	0.5.10.12
+-(ML-v2.101.1)
+.5.10.12
+
+	
+	
+		You haven't exported your  ave in a while |
+		
+			Export |
+		
+		Help me export |
+		Ignore for now
+	
+
+
+
+	
+		
+		
+	
+
+
+
+	                 Main   Allure: 1863Rng: 71Danger: 5653Pa age: Sea Dive                Home            Te t            Enrage Avery            Calm Avery            Pa  1 minute            Pa  15 minute             Pa  20 minute             Pa  1 hour            Pa  3 hour             Pa  6 hour             Pa  12 hour             Pa  18 hour             Pa  23 hour             Pa  24 hour             Wardrobe            Food tuff Prop Debug            Learn all recipe             Give 20 of each food tuff            Strip            Strip to undie             Strip all            Ca
+[A] swimmingskill: skill:1000000 swimming:undefined oxygen:1200 phase:0
+[A] Sea Dive passage source head: 
+
+<<location "seadive">><<set $bus to "seadive">><<set $outside to 0>><<underwater>><<effects>>
+<<if $stress gte $stressmax>>
+	<<passoutbeach>>
+<<else>>
+	<<set $danger to random(1, 10000)>><<set $dangerevent to 0>>
+	<<if $danger gte (9900 - $allure) and $event
+[A] passage count: 1 ids:passage-sea-dive
+[B] click: true
+[B] after click passage: Sea Dive
+[B] phase: 0
+[B] page text head: 
+	
+
+
+
+
+
+	         
+	
+		
+			
+		
+		
+	
+
+
+
+
+
+
+                                                                                                      Air:                                                   
+
+	
+	
+		
+			你潜入水下，光线穿过开阔的水面上，照亮了附近的景象。
+		
+		
+
+		
+			(1) 浮上水面
+			
+		
+		
+		
+		
+			(2) 向下潜水  | - Air   |
+[B] hit 你潜入水下: true

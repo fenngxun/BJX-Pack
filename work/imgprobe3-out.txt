@@ -1,0 +1,17 @@
+booted: true
+getImage.toString head: async getImage(src) {
+        var _a;
+        src = this.normalizePath(src);
+        if (this.imgLookupTable.has(src)) {
+            const n = this.imgLookupTable.get(src);
+            if (n && n.length > 0) {
+                try {
+                    const c = await ((_a = n[0]) === null || _a === 
+getImage(img/body/base-head.png): null
+modLoader keys: P:constructor | P:getModCacheOneArray | P:getModCacheArray | P:getModAllName | P:getModCacheMap | P:getModCacheMapWithAlias | P:checkModCacheData | P:checkModCacheUniq | P:getModCacheByNameOne | P:getModCacheByAliseOne | P:getModCacheByFromType | P:getModReadCache | P:checkModConflictList | P:getLoaderKeyConfig | P:getIndexDBLoader | P:getLocalStorageLoader | P:getLocalLoader | P:getRemoteLoader | P:getLazyLoader | P:addModReadZip | P:loadMod | P:registerMod2Addon | P:triggerAfterModLoad | P:filterModCanLoad | P:lazyRegisterNewMod | P:do_initModInjectEarlyLoadInDomScript | P:initModInjectEarlyLoadInDomScript | P:do_initModEarlyLoadScript | P:initModEarlyLoadScript | P:getModEarlyLoadCache | P:getModByNameOne | P:getModZip | P:tryInitWaitingLazyLoadMod | O:modReadCache | O:modCache | O:modLazyCache | O:modLoadRecord | O:loadOrder | O:gSC2DataManager | O:modLoadControllerCallback | O:thisWin | O:logger | O:modLoaderKeyConfig | O:modLocalLoader | O:modRemoteLoader | O:modLocalStorageLoader | O:modIndexDBLoader | O:loadEndModList | O:toLoadModList | O:newNowMod | O:replacedNowMod
+typeof: undefined
+typeof: undefined
+getModImg(GameOriginalImagePack, img/body/base-head.png): no getModImg
+mod caches: {"GameOriginalImagePack":"name,from,mod,zip","bjx-pack":"name,from,mod,zip"}
+Tumbler global: {"hasTumbler":"undefined","hasSetupTumbler":"undefined"}
+setup.Tumbler keys: absent

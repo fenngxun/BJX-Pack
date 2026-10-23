@@ -1,0 +1,10 @@
+booted: true
+loaded mods: ["ModLoaderGui","ConflictChecker","ModLoader DoL ImageLoaderHook","ImageLoaderHook","ImageLoaderHookCore","ModSubUiAngularJs","BeautySelectorAddon","ImageLoaderHook2BeautySelectorAddon","CheckGameVersion","CheckDoLCompressorDictionaries","TweeReplacerLinker","TweeReplacer","I18nTweeReplacer","I18nTweeList","I18nScriptList","ReplacePatcher","TweePrefixPostfixAddon","Diff3WayMerge","DoLTimeWrapperAddon","ModdedClothesAddon","ModdedHairAddon","ModdedFeatsAddon","SweetAlert2Mod","ModuleCssReplacer","DoLLinkButtonFilter","bjx-pack"]
+=== controller log ===
+{"log":["(revive:eval)","(function log(s) {\n          _this2.logInfo(s);\n        })"],"warn":["(revive:eval)","(function warn(s) {\n          _this2.logWarning(s);\n        })"],"error":["(revive:eval)","(function error(s) {\n          _this2.logError(s);\n        })"]}
+=== logger arrays ===
+no logger
+=== modLoadRecord ===
+EXC Converting circular structure to JSON
+    --> starting at object with constructor 'Window'
+    --- property 'window' closes the circle

@@ -1,0 +1,22 @@
+/* BJX pack: combat x-ray viewports (blowjob x-ray / womb / intestines)
+   moved from the bottom row to a left-hand vertical column, sitting
+   alongside the main combat canvas. Narrow screens fall back to the
+   vanilla bottom-row layout so the main canvas keeps its width. */
+.combat-grid.d-grid {
+	grid-template-rows: auto auto 1fr !important;
+	grid-template-columns: auto 1fr 1fr !important;
+	grid-template-areas:
+		"bottom-start centre centre"
+		"bottom centre centre"
+		"bottom-end centre centre" !important;
+}
+
+@media (max-width: 800px) {
+	.combat-grid.d-grid {
+		grid-template-rows: 1fr !important;
+		grid-template-columns: auto !important;
+		grid-template-areas:
+			"centre centre centre"
+			"bottom-start bottom bottom-end" !important;
+	}
+}

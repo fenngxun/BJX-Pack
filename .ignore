@@ -1,0 +1,40 @@
+# ripgrep / Grep 工具的搜索排除规则（不影响 git，git 看 .gitignore）
+#
+# 目的：搜源码时不再被产物淹没。此前查一个符号 4 处命中里有 3 处是产物。
+# 需要搜产物时（例如确认 pack 里的最终文本）显式加 --no-ignore 或指定目录：
+#   rg --no-ignore "关键词" work/bjx-pack/tweeFileList/
+
+# 构建产物（可从源重建）
+work/bjx-pack/tweeFileList/
+work/bjx-pack/img/
+work/bjx-pack/boot.json
+work/bjx-pack/scriptFileList/
+work/genparts/_verify_*/
+
+# 外部输入与基线
+game/
+refs/
+mod/
+mod_i18n/
+Dol-BJX-Ex-main/
+bjx-整合包-*/
+
+# 本地备份 / 工具链 / 浏览器 profile
+work/lyra_backup/
+work/tools/
+work/_probe/
+work/_probe3/
+work/shots/
+work/icandy_norm/
+work/icandy_extra_icons/
+work/*-profile/
+work/.diag-profile-*/
+
+# 二进制与日志
+*.png
+*.jpg
+*.gif
+*.zip
+*.html
+*.log
+*.pyc

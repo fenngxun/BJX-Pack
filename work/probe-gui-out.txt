@@ -1,0 +1,48 @@
+booted: true
+passage: Start
+[entry] body text has ModLoader: true
+[entry] #menu-look: 存档重新开始
+[entry] sidebar links: 
+[entry] buttons all:  |  |  | SAVES | OPTIONS | FEATS | Basic | Custom | Random | Character Creation * | Feat Boosts * | Gallery | Export/Import Settings | Start Game!
+[api] modLoaderGui keys: gSC2DataManager,gModUtils,gLoadingProgress,gPassageTracer,thisWin,isHttpMode,logShowConfig,initOk,logger,startBanner,debugExport,modLoadSwitch,modSubUiAngularJsService,modManagerSubUi,nowModName
+[api] modSC2DataManager keys: startInitOk,thisWin,modUtils,modLoadController,passageTracer,languageManager,sc2EventTracer,jsPreloader,addonPluginManager,sC2JsEvalContext,dependenceChecker,htmlTagSrcHook,wikifyTracer,originSC2DataInfoCache,modLoader,cSC2DataInfoAfterPatchCache,conflictResult
+[api] angular present: object
+[img] window.img: none
+[img] setup.imageApi: LocationImages,tanImg,shadowImage
+[img] img elements on page: 1
+[img] canvases: 1
+[img] ModI18N / ImagePack in zip list: "no-getModAllName"
+[gui] #ui-bar links: Degrees of Lewdity
+
+
+
+	
+	
+		
+	
+	
+		  Version 0.5.10.12  "Lofts of Clothes" edition      Official website vrelnir.com   Changelog and information vrelnir.blogspot.com   Support development https://vrelnir.fanbox.cc/     Official Discord discord.gg/VznUtEh    SAVES  OPTIONS FEATS 
+	
+
+
+
+
+存档重新开始
+[gui] story region head: 
+	
+		
+		
+		Loading…
+	
+	/******/ (() => { // webpackBootstrap
+/******/ 	var __webpack_modules__ = ({
+
+/***/ "./node_modules/jszip/dist/jszip.min.js":
+/*!**********************************************!*\
+  !*** ./node_modules/jszip/dist/jszip.min.js ***!
+  \**********************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+/*!
+
+JSZip v3.10.1 - A Java

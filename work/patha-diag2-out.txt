@@ -1,0 +1,131 @@
+booted: true
+console messages: 2602
+--- relevant (698) ---
+[log] getGlobal().jQuery function jQuery(selector, context) {
+      // The jQuery object is actually just the init constructor 'enhanced'
+      // Need init if jQuery is called (just allow error to be thrown if not included)
+      return new jQuery.fn.init(selector, context);
+    }
+[log] getGlobal().jQuery function jQuery(selector, context) {
+      // The jQuery object is actually just the init constructor 'enhanced'
+      // Need init if jQuery is called (just allow error to be thrown if not included)
+      return new jQuery.fn.init(selector, context);
+    }
+[log] ModLoader ====== SC2DataManager startInit() start
+[log] this.modLoadControllerCallback ModLoadController
+[log] LoaderKeyConfig getLoaderKey state: modDataValueZipList modDataValueZipList undefined
+[log] LoaderKeyConfig getLoaderKey return: modDataValueZipList modDataValueZipList
+[log] ModLoader ====== LocalLoader load() DataValueZip Array(1)
+[log] ModLoader ====== ModZipReader init() modInfo Object a20affda395502ff
+[log] ModLoader ====== ModZipReader init() modInfo Object 42ba5262b13bcfd0
+[log] ModLoader ====== ModZipReader init() modInfo Object 4c21c877521d4036
+[log] ModLoader ====== ModZipReader init() modInfo Object 8c06b2c4c97ba81b
+[log] ModLoader ====== ModZipReader init() modInfo Object 27904eba8ed22988
+[log] ModLoader ====== ModZipReader init() modInfo Object 8e02758cd3b9fd7d
+[log] ModLoader ====== ModZipReader init() modInfo Object 6614868154d6c9e1
+[log] ModLoader ====== ModZipReader init() modInfo Object 2c1d28918881a10b
+[log] ModLoader ====== ModZipReader init() modInfo Object f40011dd2bb823df
+[log] ModLoader ====== ModZipReader init() modInfo Object 611c0dc34e9dcce7
+[log] ModLoader ====== ModZipReader init() modInfo Object 34d26d2419d8409e
+[log] ModLoader ====== ModZipReader init() modInfo Object b22e29b51faff23d
+[log] ModLoader ====== ModZipReader init() modInfo Object d09dac18504ca2a5
+[log] ModLoader ====== ModZipReader init() modInfo Object f2a553f996556de6
+[log] ModLoader ====== ModZipReader init() modInfo Object 18afa9821bd24a42
+[log] ModLoader ====== ModZipReader init() modInfo Object db17e195da5849ef
+[log] ModLoader ====== ModZipReader init() modInfo Object aec155c2631b1045
+[log] ModLoader ====== ModZipReader init() modInfo Object 606c51711a72c68c
+[log] ModLoader ====== ModZipReader init() modInfo Object 12c7da6d528ab558
+[log] ModLoader ====== ModZipReader init() modInfo Object e3b700ef10f5104e
+[log] ModLoader ====== ModZipReader init() modInfo Object 7ef4e0970d0e6e60
+[log] ModLoader ====== ModZipReader init() modInfo Object f5cc05aeb219f66e
+[log] ModLoader ====== ModZipReader init() modInfo Object 31f429c6d234ba23
+[log] LoaderKeyConfig getLoaderKey state: modList.json modList.json undefined
+[log] LoaderKeyConfig getLoaderKey return: modList.json modList.json
+[error] SyntaxError: Unexpected token '<', "<!DOCTYPE "... is not valid JSON
+[log] ModLoader ====== RemoteLoader load() modList undefined
+[log] LoaderKeyConfig getLoaderKey state: modDataLocalStorageZipList modDataLocalStorageZipList undefined
+[log] LoaderKeyConfig getLoaderKey return: modDataLocalStorageZipList modDataLocalStorageZipList
+[log] LoaderKeyConfig getLoaderKey state: modDataLocalStorageZip modDataLocalStorageZip undefined
+[log] LoaderKeyConfig getLoaderKey return: modDataLocalStorageZip modDataLocalStorageZip
+[log] LoaderKeyConfig getLoaderKey state: ModLoader_IndexDBLoader ModLoader_IndexDBLoader undefined
+[log] LoaderKeyConfig getLoaderKey return: ModLoader_IndexDBLoader ModLoader_IndexDBLoader
+[log] LoaderKeyConfig getLoaderKey state: ModLoader_IndexDBLoader ModLoader_IndexDBLoader undefined
+[log] LoaderKeyConfig getLoaderKey return: ModLoader_IndexDBLoader ModLoader_IndexDBLoader
+[log] LoaderKeyConfig getLoaderKey state: modDataIndexDBZipListHidden modDataIndexDBZipListHidden undefined
+[log] LoaderKeyConfig getLoaderKey return: modDataIndexDBZipListHidden modDataIndexDBZipListHidden
+[log] LoaderKeyConfig getLoaderKey state: modDataIndexDBZipList modDataIndexDBZipList undefined
+[log] LoaderKeyConfig getLoaderKey return: modDataIndexDBZipList modDataIndexDBZipList
+[log] LoaderKeyConfig getLoaderKey state: modDataIndexDBZip modDataIndexDBZip undefined
+[log] LoaderKeyConfig getLoaderKey return: modDataIndexDBZip modDataIndexDBZip
+[log] ModLoader ====== IndexDBLoader load() list Array(2)
+[log] ModLoader ====== ModZipReader init() modInfo Object 1cd10c376bbfa0bc
+[log] ModLoader ====== do_initModInjectEarlyLoadInDomScript() inject start:  Array(1) Array(1)
+[log] ModLoader ====== do_initModInjectEarlyLoadInDomScript() inject end:  Array(1) Array(1)
+[log] ModLoadSwitch.canLoadThisMod() Array(1)
+[log] ModLoadSwitch.canLoadThisMod() Array(1)
+[log] ModLoadSwitch.canLoadThisMod() Array(1)
+[log] ModLoadSwitch.canLoadThisMod() Array(1)
+[log] ModLoadSwitch.canLoadThisMod() Array(1)
+[log] ModLoadSwitch.canLoadThisMod() Array(1)
+[log] ModLoadSwitch.canLoadThisMod() Array(1)
+[log] ModLoadSwitch.canLoadThisMod() Array(1)
+[log] ModLoadSwitch.canLoadThisMod() Array(1)
+[log] ModLoadSwitch.canLoadThisMod() Array(1)
+[log] ModLoadSwitch.canLoadThisMod() Array(1)
+[log] ModLoadSwitch.canLoadThisMod() Array(1)
+[log] ModLoadSwitch.canLoadThisMod() Array(1)
+[log] ModLoadSwitch.canLoadThisMod() Array(1)
+[log] ModLoadSwitch.canLoadThisMod() Array(1)
+[log] ModLoadSwitch.canLoadThisMod() Array(1)
+[log] ModLoadSwitch.canLoadThisMod() Array(1)
+[log] ModLoadSwitch.canLoadThisMod() Array(1)
+[log] ModLoadSwitch.canLoadThisMod() Array(1)
+[log] ModLoadSwitch.canLoadThisMod() Array(1)
+[log] ModLoadSwitch.canLoadThisMod() Array(1)
+[log] ModLoadSwitch.canLoadThisMod() Array(1)
+[log] ModLoadSwitch.canLoadThisMod() Array(1)
+[log] ModLoader ====== do_initModInjectEarlyLoadInDomScript() inject start:  Array(1) Array(1)
+[log] ModLoader ====== AddonPluginManager.registerAddonPlugin()  Array(2)
+[log] ModLoader ====== do_initModInjectEarlyLoadInDomScript() inject end:  Array(1) Array(1)
+[log] ModLoadSwitch.canLoadThisMod() Array(1)
+[log] ModLoadSwitch.canLoadThisMod() Array(1)
+[log] ModLoadSwitch.canLoadThisMod() Array(1)
+[log] ModLoadSwitch.canLoadThisMod() Array(1)
+[log] ModLoadSwitch.canLoadThisMod() Array(1)
+[log] ModLoadSwitch.canLoadThisMod() Array(1)
+[log] ModLoadSwitch.canLoadThisMod() Array(1)
+[log] ModLoadSwitch.canLoadThisMod() Array(1)
+[log] ModLoadSwitch.canLoadThisMod() Array(1)
+[log] ModLoadSwitch.canLoadThisMod() Array(1)
+[log] ModLoadSwitch.canLoadThisMod() Array(1)
+[log] ModLoadSwitch.canLoadThisMod() Array(1)
+[log] ModLoadSwitch.canLoadThisMod() Array(1)
+[log] ModLoadSwitch.canLoadThisMod() Array(1)
+[log] ModLoadSwitch.canLoadThisMod() Array(1)
+[log] ModLoadSwitch.canLoadThisMod() Array(1)
+[log] ModLoadSwitch.canLoadThisMod() Array(1)
+[log] ModLoadSwitch.canLoadThisMod() Array(1)
+[log] ModLoadSwitch.canLoadThisMod() Array(1)
+[log] ModLoadSwitch.canLoadThisMod() Array(1)
+[log] ModLoadSwitch.canLoadThisMod() Array(1)
+[log] ModLoadSwitch.canLoadThisMod() Array(1)
+[log] ModLoader ====== do_initModInjectEarlyLoadInDomScript() inject start:  Array(1) Array(1)
+[log] ModLoader ====== AddonPluginManager.registerAddonPlugin()  Array(2)
+[log] ModLoader ====== AddonPluginManager.registerAddonPlugin()  Array(2)
+[log] ModLoader ====== AddonPluginManager.registerAddonPlugin()  Array(2)
+[log] [ImageLoaderHook] register modRef done. Array(1)
+[log] ModLoader ====== do_initModInjectEarlyLoadInDomScript() inject end:  Array(1) Array(1)
+[log] ModLoadSwitch.canLoadThisMod() Array(1)
+[log] ModLoadSwitch.canLoadThisMod() Array(1)
+[log] ModLoadSwitch.canLoadThisMod() Array(1)
+[log] ModLoadSwitch.canLoadThisMod() Array(1)
+[log] ModLoadSwitch.canLoadThisMod() Array(1)
+[log] ModLoadSwitch.canLoadThisMod() Array(1)
+[log] ModLoadSwitch.canLoadThisMod() Array(1)
+[log] ModLoadSwitch.canLoadThisMod() Array(1)
+[log] ModLoadSwitch.canLoadThisMod() Array(1)
+[log] ModLoadSwitch.canLoadThisMod() Array(1)
+[log] ModLoadSwitch.canLoadThisMod() Array(1)
+[log] ModLoadSwitch.canLoadThisMod() Array(1)
+[log] ModLoadSwitch.canLoadThisMod() Array(1)
+[log] ModLoadSwitch.canLoadThisMod() Array(1)

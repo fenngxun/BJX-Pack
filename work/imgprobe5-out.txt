@@ -1,0 +1,7 @@
+booted: true
+zip.zip() type: undefined
+jszip read img/body/base-head.png: OK base64 len=448 head=iVBORw0KGgoAAAANSUhEUgAA
+mod.imgs: Array(18120)
+imgFileReplaceList: 0 entries
+shadowImage: [object Object]
+sample img full attrs: ["class=imgButton","ml-src=img/ui/coin-gold.gif","ml-replaced-src=img/ui/coin-gold.gif","src=img/ui/coin-gold.gif"]
