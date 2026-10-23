@@ -32,7 +32,7 @@ sys.path.insert(0, WORK)
 from bjx_version import VERSION, DIST_DIR_NAME  # noqa: E402
 
 DEFAULT_COVER = r'D:\Pictures\Camera Roll\6af4b6f367c3d2f3e3a3d904ed7de8aa705bea3e_PhotoGrid.png'
-# 中性文件名：看不出是整合包还是安装包
+# 分发用文件名：手机 = 安卓 APK（zip 内嵌），电脑 = PC 整合包
 # 安卓版 payload 是「zip(内含 apk + 安装说明)」——先打包再伪装，
 # 这样两端都是 zip，改后缀后任何解压软件都能直接开。
 PC_ZIP = os.path.join(ROOT, 'bjx-整合包-%s-开箱即玩.zip' % VERSION)
@@ -40,8 +40,8 @@ ANDROID_ZIP = os.path.join(ROOT, 'bjx-整合包-%s-安卓.zip' % VERSION)
 ANDROID_APK = os.path.join(ROOT, 'bjx-整合包-%s-安卓.apk' % VERSION)
 ANDROID_README = os.path.join(ROOT, 'bjx-整合包-%s-安卓-安装说明.txt' % VERSION)
 TARGETS = [
-    ('PhotoGrid_1759054899.png', PC_ZIP),
-    ('PhotoGrid_1759054900.png', ANDROID_ZIP),
+    ('电脑.png', PC_ZIP),
+    ('手机.png', ANDROID_ZIP),
 ]
 CHUNK = 1 << 20
 
