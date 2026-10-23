@@ -21,6 +21,7 @@ import shutil
 import struct
 import sys
 import time
+import zipfile
 
 sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8')
 
@@ -32,11 +33,32 @@ from bjx_version import VERSION, DIST_DIR_NAME  # noqa: E402
 
 DEFAULT_COVER = r'D:\Pictures\Camera Roll\6af4b6f367c3d2f3e3a3d904ed7de8aa705bea3e_PhotoGrid.png'
 # 中性文件名：看不出是整合包还是安装包
+# 安卓版 payload 是「zip(内含 apk + 安装说明)」——先打包再伪装，
+# 这样两端都是 zip，改后缀后任何解压软件都能直接开。
+PC_ZIP = os.path.join(ROOT, 'bjx-整合包-%s-开箱即玩.zip' % VERSION)
+ANDROID_ZIP = os.path.join(ROOT, 'bjx-整合包-%s-安卓.zip' % VERSION)
+ANDROID_APK = os.path.join(ROOT, 'bjx-整合包-%s-安卓.apk' % VERSION)
+ANDROID_README = os.path.join(ROOT, 'bjx-整合包-%s-安卓-安装说明.txt' % VERSION)
 TARGETS = [
-    ('PhotoGrid_1759054899.png', os.path.join(ROOT, 'bjx-整合包-%s-开箱即玩.zip' % VERSION)),
-    ('PhotoGrid_1759054900.png', os.path.join(ROOT, 'bjx-整合包-%s-安卓.apk' % VERSION)),
+    ('PhotoGrid_1759054899.png', PC_ZIP),
+    ('PhotoGrid_1759054900.png', ANDROID_ZIP),
 ]
 CHUNK = 1 << 20
+
+
+def make_android_zip():
+    """把 apk + 安装说明打成 zip（APK 本身已压缩，用 STORED 避免二次压缩耗时）。"""
+    if not os.path.exists(ANDROID_APK):
+        raise SystemExit('缺 APK: %s（先跑 build_apk.py）' % ANDROID_APK)
+    extras = [ANDROID_README] if os.path.exists(ANDROID_README) else []
+    t0 = time.time()
+    with zipfile.ZipFile(ANDROID_ZIP, 'w', zipfile.ZIP_STORED) as z:
+        z.write(ANDROID_APK, os.path.basename(ANDROID_APK))
+        for f in extras:
+            z.write(f, os.path.basename(f))
+    print('安卓 zip: %s (%.1f MB, %.1fs)'
+          % (os.path.basename(ANDROID_ZIP), os.path.getsize(ANDROID_ZIP) / 1048576,
+             time.time() - t0))
 
 
 def png_payload_offset(path):
@@ -109,9 +131,12 @@ def main():
         return
 
     print('载体: %s (%.1f MB)' % (a.cover, os.path.getsize(a.cover) / 1048576))
+    if not os.path.exists(ANDROID_ZIP):
+        make_android_zip()
     for name, payload in TARGETS:
         make(a.cover, name, payload)
-    print('\n解包：python work/disguise_pack.py --extract <伪装.png> <输出.zip|apk>')
+    print('\n解包：把 .png 后缀改成 .zip，用 7-Zip / WinRAR / 360压缩 直接解开')
+    print('      （Windows 资源管理器自带的解压不行，它要求 zip 头在文件开头）')
 
 
 if __name__ == '__main__':
